@@ -5,7 +5,7 @@
       "scope": "source.coda",
       "path": ".",
       "file-types": ["coda"],
-      "highlights": ["queries/coda/highlights.scm"]
+      "highlights": ["queries/highlights.scm"]
     }
   ],
   "metadata": {
