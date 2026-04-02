@@ -192,11 +192,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "quoted_string"
+          "name": "key_quoted_string"
         },
         {
           "type": "SYMBOL",
-          "name": "bare_string"
+          "name": "key_bare_string"
         }
       ]
     },
@@ -205,11 +205,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "quoted_string"
+          "name": "value_quoted_string"
         },
         {
           "type": "SYMBOL",
-          "name": "bare_string"
+          "name": "value_bare_string"
         }
       ]
     },
@@ -440,7 +440,7 @@
           "name": "column",
           "content": {
             "type": "SYMBOL",
-            "name": "scalar"
+            "name": "key"
           }
         },
         {
@@ -448,7 +448,7 @@
           "name": "column",
           "content": {
             "type": "SYMBOL",
-            "name": "scalar"
+            "name": "key"
           }
         },
         {
@@ -458,7 +458,7 @@
             "name": "column",
             "content": {
               "type": "SYMBOL",
-              "name": "scalar"
+              "name": "key"
             }
           }
         },
@@ -575,7 +575,7 @@
           "name": "column",
           "content": {
             "type": "SYMBOL",
-            "name": "scalar"
+            "name": "key"
           }
         },
         {
@@ -585,7 +585,7 @@
             "name": "column",
             "content": {
               "type": "SYMBOL",
-              "name": "scalar"
+              "name": "key"
             }
           }
         },
@@ -624,7 +624,7 @@
           "name": "row_key",
           "content": {
             "type": "SYMBOL",
-            "name": "scalar"
+            "name": "key"
           }
         },
         {
@@ -694,7 +694,7 @@
         }
       }
     },
-    "bare_string": {
+    "key_bare_string": {
       "type": "TOKEN",
       "content": {
         "type": "PREC",
@@ -705,7 +705,54 @@
         }
       }
     },
-    "quoted_string": {
+    "key_quoted_string": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "\""
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "PATTERN",
+                  "value": "[^\"\\\\\\r\\n]+"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "\\\\[ntr\"\\\\]"
+                },
+                {
+                  "type": "PATTERN",
+                  "value": "\\\\."
+                }
+              ]
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "\""
+          }
+        ]
+      }
+    },
+    "value_bare_string": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 0,
+        "content": {
+          "type": "PATTERN",
+          "value": "[^\\s{}\\[\\]\"#]+"
+        }
+      }
+    },
+    "value_quoted_string": {
       "type": "TOKEN",
       "content": {
         "type": "SEQ",

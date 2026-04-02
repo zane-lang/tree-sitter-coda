@@ -1,16 +1,16 @@
 {
-  "grammars": [
-    {
-      "name": "coda",
-      "scope": "source.coda",
-      "path": ".",
-      "file-types": ["coda"],
-      "highlights": "queries/highlights.scm"
-    }
-  ],
-  "metadata": {
-    "version": "0.1.0",
-    "license": "MIT",
-    "description": "Coda grammar for tree-sitter"
-  }
+	"grammars": [
+		{
+			"name": "coda",
+			"scope": "source.coda",
+			"path": ".",
+			"file-types": ["coda"],
+			"highlights": "queries/highlights.scm"
+		}
+	],
+	"metadata": {
+		"version": "0.1.0",
+		"license": "MIT",
+		"description": "Coda grammar for tree-sitter"
+	}
 }

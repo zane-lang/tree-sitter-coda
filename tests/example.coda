@@ -1,0 +1,29 @@
+# Release notes
+title "Coda 1.2"
+date 2026-04-01
+"release manager" "Terry Davis"
+
+# property
+changes [
+	# type is property, desc is property
+	type desc
+	# value, value
+	feat "HolyC-style map ordering"
+	feat "Script runner: once-a-boot"
+	fix "comment attachment in tables"
+]
+
+# property
+contributors [
+	# key is keyword, role is property, handle is property
+	key role handle
+	# property, value
+	terry maintainer td
+]
+
+# property
+notes {
+	# property, value
+	summary "Blessed boot and brisk builds"
+	impact "No breaking changes"
+}
