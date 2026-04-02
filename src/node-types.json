@@ -1,0 +1,661 @@
+[
+  {
+    "type": "array",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array_body",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "newline",
+          "named": true
+        },
+        {
+          "type": "trivia_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "array_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bare_list",
+          "named": true
+        },
+        {
+          "type": "keyed_table",
+          "named": true
+        },
+        {
+          "type": "plain_table",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bare_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "list_item_line",
+          "named": true
+        },
+        {
+          "type": "trivia_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "blank_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "newline",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "blank_line",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "comment_line",
+          "named": true
+        },
+        {
+          "type": "newline",
+          "named": true
+        },
+        {
+          "type": "pair_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "newline",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "key",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bare_string",
+          "named": true
+        },
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyed_header",
+    "named": true,
+    "fields": {
+      "column": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "scalar",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "key_kw",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyed_header_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyed_header",
+          "named": true
+        },
+        {
+          "type": "newline",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyed_row",
+    "named": true,
+    "fields": {
+      "cell": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "scalar",
+            "named": true
+          }
+        ]
+      },
+      "row_key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "scalar",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyed_row_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyed_row",
+          "named": true
+        },
+        {
+          "type": "newline",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyed_table",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyed_header_line",
+          "named": true
+        },
+        {
+          "type": "keyed_row_line",
+          "named": true
+        },
+        {
+          "type": "trivia_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_item",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "scalar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list_item_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "list_item",
+          "named": true
+        },
+        {
+          "type": "newline",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pair",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "pair_container",
+          "named": true
+        },
+        {
+          "type": "pair_scalar",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pair_container",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "key",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pair_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "newline",
+          "named": true
+        },
+        {
+          "type": "pair",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pair_scalar",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "key",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "scalar",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "plain_header",
+    "named": true,
+    "fields": {
+      "column": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "scalar",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "plain_header_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "newline",
+          "named": true
+        },
+        {
+          "type": "plain_header",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "plain_row",
+    "named": true,
+    "fields": {
+      "cell": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "scalar",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "plain_row_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "newline",
+          "named": true
+        },
+        {
+          "type": "plain_row",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "plain_table",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "plain_header_line",
+          "named": true
+        },
+        {
+          "type": "plain_row_line",
+          "named": true
+        },
+        {
+          "type": "trivia_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scalar",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bare_string",
+          "named": true
+        },
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "blank_line",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "comment_line",
+          "named": true
+        },
+        {
+          "type": "pair",
+          "named": true
+        },
+        {
+          "type": "pair_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "trivia_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "blank_line",
+          "named": true
+        },
+        {
+          "type": "comment_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "bare_string",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "key_kw",
+    "named": true
+  },
+  {
+    "type": "newline",
+    "named": true
+  },
+  {
+    "type": "quoted_string",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]
