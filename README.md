@@ -40,14 +40,27 @@ vim.api.nvim_create_autocmd("User", {
 :TSInstall coda
 ```
 
-Highlighting then starts like any other nvim-treesitter language (for example
-with `vim.treesitter.start()` in a `FileType coda` autocommand).
+Then turn on highlighting, folding and indentation for Coda files:
+
+```lua
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "coda",
+  callback = function()
+    vim.treesitter.start()
+    vim.wo.foldmethod = "expr"
+    vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
+```
 
 ## Other editors
 
-Any editor that loads Tree-sitter grammars can use this one: point it at this
-repository, with `queries/` as the query directory. `tree-sitter.json` names
-the language `coda`, with the scope `source.coda` and the file type `coda`.
+Editors that load Tree-sitter grammars can use this one, though each wires a
+grammar up differently: some need only the repository and its `queries/`
+directory, while others, such as Emacs, also need a mode that uses the parser.
+`tree-sitter.json` names the language `coda`, with the scope `source.coda` and
+the file type `coda`.
 
 ## Development
 
