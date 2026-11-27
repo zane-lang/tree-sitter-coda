@@ -5,7 +5,7 @@ A [Tree-sitter](https://tree-sitter.github.io/) grammar for
 `zane.coda` and `zane-lock.coda` files. It gives editors that use Tree-sitter
 syntax highlighting, folding and indentation for `.coda` files.
 
-| File | What it is |
+| File | Contents |
 |---|---|
 | [`grammar.js`](grammar.js) | The grammar; `src/` is generated from it |
 | [`queries/highlights.scm`](queries/highlights.scm) | Highlighting: keys, values, comments, brackets, and the `key` of a keyed-table header |
