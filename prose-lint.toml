@@ -1,6 +1,0 @@
-# prose-lint has no JavaScript or Scheme lexer. grammar.js writes // and
-# /* */ comments, which the C lexer reads, and the query files write ;
-# comments, which the dune lexer reads.
-[languages]
-".js" = "c"
-".scm" = "dune"
